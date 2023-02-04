@@ -4,5 +4,7 @@ services:
         build: ./docker/python
         container_name: python
         volumes:
-            - ./src/:/var/www/html/
+            - ./src:/var/www/html
+        ports:
+            - "5000:80"
         tty: true
