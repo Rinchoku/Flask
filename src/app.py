@@ -1,7 +1,7 @@
 import os 
 
 from markupsafe import escape
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for
 
 
 port = int(os.environ['PORT'])
@@ -10,6 +10,10 @@ app = Flask(__name__)
 @app.route('/')
 def index():
    return 'Hello World!!!!!!'
+
+@app.get('/redirects/')
+def redirects():
+    return redirect(url_for('demoTemplate'))
 
 @app.get('/demo/')
 @app.get('/demo/<string:name>/')
