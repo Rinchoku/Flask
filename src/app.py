@@ -11,23 +11,23 @@ app = Flask(__name__)
 def index():
    return 'Hello World!!!!!!'
 
-@app.route('/demo/variables/all/<user_id>')
+@app.route('/demo/variables/all/<user_id>/')
 def demoAll(user_id):
     return f'<h1>Demo ALL</h1><p>{escape(user_id)}</p>'
 
-@app.route('/demo/variables/string/<string:user_id>')
+@app.route('/demo/variables/string/<string:user_id>/')
 def demoString(user_id):
     return f'<h1>Demo String</h1><p>{escape(user_id)}</p>'
 
-@app.route('/demo/variables/int/<int:user_id>')
+@app.route('/demo/variables/int/<int:user_id>/')
 def demoInt(user_id):
     return f'<h1>Demo Int</h1><p>{escape(user_id)}</p>'
 
-@app.route('/demo/variables/path/<path:user_id>')
+@app.route('/demo/variables/path/<path:user_id>/')
 def demoPath(user_id):
     return f'<h1>Demo Path</h1><p>{escape(user_id)}</p>'
 
-@app.route('/demo/variables/uuid/<uuid:user_id>')
+@app.route('/demo/variables/uuid/<uuid:user_id>/')
 def demoUUID(user_id):
     return f'<h1>Demo UUID</h1><p>{escape(user_id)}</p>'
 
