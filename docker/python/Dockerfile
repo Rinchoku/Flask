@@ -4,7 +4,8 @@ WORKDIR /var/www/html
 
 ENV PORT 80
 
+COPY ./requirements.txt ./requirements.txt
 RUN pip install --upgrade pip
-RUN pip install Flask
+RUN pip install -r requirements.txt
 
 CMD ["python", "app.py"]
