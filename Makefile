@@ -14,3 +14,6 @@ bash:
 
 pip:
 	docker exec -it python pip3 $(CMD)
+
+log:
+	docker logs -t -f python
