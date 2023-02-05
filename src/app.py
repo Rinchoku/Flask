@@ -1,7 +1,7 @@
 import os 
 
 from markupsafe import escape
-from flask import Flask
+from flask import Flask, render_template
 
 
 port = int(os.environ['PORT'])
@@ -10,6 +10,11 @@ app = Flask(__name__)
 @app.route('/')
 def index():
    return 'Hello World!!!!!!'
+
+@app.get('/demo/')
+@app.get('/demo/<string:name>/')
+def demoTemplate(name=None):
+    return render_template('demo.html', name=name)
 
 @app.route('/demo/variables/all/<user_id>/')
 def demoAll(user_id):
